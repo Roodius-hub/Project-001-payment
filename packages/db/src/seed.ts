@@ -1,12 +1,12 @@
-import prisma from "../src/client.ts";
+import {prisma} from "./client";
 import bcrypt from "bcrypt";
 
 async function main() {
   const alice = await prisma.user.upsert({
-    where: { number: "2222222" },
+    where: { number: "222222223" },
     update: {},
     create: {
-      number: "22222222",
+      number: "22222222443",
       password: await bcrypt.hash("alice", 10),
       name: "alice",
       Balance: {
@@ -28,10 +28,10 @@ async function main() {
   });
   
   const bob = await prisma.user.upsert({
-    where: {number:'222222222'},
+    where: {number:'222222222222'},
     update:{},
     create:{
-      number: '22222222222',
+      number: '22222222222244',
       password: await bcrypt.hash('bob', 10),
       name: 'bob',
       Balance: {
